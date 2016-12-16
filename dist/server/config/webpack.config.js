@@ -7,6 +7,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function () {
   var config = {
     devtool: 'eval',
+    devServer: {
+      stats: {
+        colors: true,
+        chunks: false
+      }
+    },
     entry: {
       manager: [require.resolve('./polyfills'), require.resolve('../../client/manager')],
       preview: [require.resolve('./polyfills'), require.resolve('./globals'), require.resolve('webpack-hot-middleware/client') + '?reload=true']

@@ -15,6 +15,12 @@ import babelLoaderConfig from './babel.js';
 export default function () {
   const config = {
     devtool: 'eval',
+    devServer: {
+      stats: {
+        colors: true,
+        chunks: false,
+      },
+    },
     entry: {
       manager: [
         require.resolve('./polyfills'),
