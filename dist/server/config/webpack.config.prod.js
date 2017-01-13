@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _stringify = require('babel-runtime/core-js/json/stringify');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
 exports.default = function () {
   var entries = {
     preview: [require.resolve('./polyfills'), require.resolve('./globals')],
@@ -23,7 +27,7 @@ exports.default = function () {
       // relative URLs works always.
       publicPath: ''
     },
-    plugins: [new _webpack2.default.DefinePlugin((0, _utils.loadEnv)({ production: true })), new _webpack2.default.optimize.DedupePlugin(), new _webpack2.default.optimize.UglifyJsPlugin({
+    plugins: [new _webpack2.default.DefinePlugin((0, _stringify2.default)((0, _utils.loadEnv)({ production: true }))), new _webpack2.default.optimize.DedupePlugin(), new _webpack2.default.optimize.UglifyJsPlugin({
       compress: {
         screw_ie8: true,
         warnings: false

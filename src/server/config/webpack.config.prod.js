@@ -35,7 +35,7 @@ export default function () {
       publicPath: '',
     },
     plugins: [
-      new webpack.DefinePlugin(loadEnv({ production: true })),
+      new webpack.DefinePlugin(JSON.stringify(loadEnv({ production: true }))),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {

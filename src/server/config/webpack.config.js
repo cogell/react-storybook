@@ -32,7 +32,7 @@ export default function () {
       publicPath: '/',
     },
     plugins: [
-      new webpack.DefinePlugin(loadEnv()),
+      new webpack.DefinePlugin(JSON.stringify(loadEnv())),
       new OccurenceOrderPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new CaseSensitivePathsPlugin(),
